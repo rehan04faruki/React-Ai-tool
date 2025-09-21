@@ -1,0 +1,24 @@
+
+@import "tailwindcss";
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge ke liye */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer/Edge ke liye */
+  scrollbar-width: none;     /* Firefox ke liye */
+}
+
+/* Make code blocks responsive */
+code, pre {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  border-radius: 8px;
+}
+
+/* Chat bubbles wrap text */
+div[class*="bg-zinc-800"], div[class*="bg-zinc-900"] {
+  word-break: break-word;
+}
