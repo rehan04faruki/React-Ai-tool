@@ -2,7 +2,7 @@ import React from "react";
 
 function RecentSearches({ recentHistory, onHistoryClick, onClearHistory }) {
   return (
-    <div className="col-span-1 flex flex-col justify-between bg-gray-100 dark:bg-zinc-800 transition-colors duration-300">
+    <div className="col-span-1 flex flex-col justify-between bg-gray-100 dark:bg-zinc-800 transition-colors duration-300 w-full md:w-auto">
       <div>
         <h1 className="text-xl flex justify-center pt-3 text-black dark:text-white">
           <span>Recent Searches</span>
@@ -31,8 +31,6 @@ function RecentSearches({ recentHistory, onHistoryClick, onClearHistory }) {
           ))}
         </ul>
       </div>
-
-
     </div>
   );
 }

@@ -11,11 +11,7 @@ function App() {
     JSON.parse(localStorage.getItem("history")) || []
   );
   const [loader, setLoader] = useState(false);
-  
 
- 
-
-  // 🔹 Question puchhne ka function
   const askQuestion = async (customQuestion) => {
     const currentQ = customQuestion || question;
     if (!currentQ.trim()) return;
@@ -61,16 +57,12 @@ function App() {
     setRecentHistory([]);
   };
 
-
   return (
-  
-    <div className="grid grid-cols-5 h-screen bg-white text-black dark:bg-zinc-900 dark:text-white transition-colors duration-300">
-    
+    <div className="grid grid-cols-1 md:grid-cols-5 h-screen bg-white text-black dark:bg-zinc-900 dark:text-white transition-colors duration-300">
       <RecentSearches
         recentHistory={recentHistory}
         onHistoryClick={askQuestion}
         onClearHistory={clearHistory}
-    
       />
 
       <ChatBox
@@ -79,10 +71,8 @@ function App() {
         setQuestion={setQuestion}
         askQuestion={askQuestion}
         loader={loader}
-        
       />
     </div>
-  
   );
 }
 

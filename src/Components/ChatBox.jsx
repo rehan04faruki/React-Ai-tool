@@ -8,13 +8,13 @@ function ChatBox({ qaList, question, setQuestion, askQuestion, loader }) {
     if (chatEndRef.current) {
       chatEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [qaList, loader]); // loader ko bhi add kiya for scroll fix
+  }, [qaList, loader]);
 
   return (
-    <div className="col-span-4 flex flex-col h-screen relative">
-      <div className="flex-1 bg-zinc-900 p-10 overflow-y-auto scrollbar-hide">
-        <h1 className="text-3xl  text-center  mb-5 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 pb-1">
-          Hello User , Ask Me Anything
+    <div className="col-span-1 md:col-span-4 flex flex-col h-screen relative">
+      <div className="flex-1 bg-zinc-900 p-5 md:p-10 overflow-y-auto scrollbar-hide">
+        <h1 className="text-2xl md:text-3xl text-center mb-5 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 pb-1">
+          Hello User, Ask Me Anything
         </h1>
 
         <div className="text-zinc-300 space-y-5">
@@ -23,9 +23,9 @@ function ChatBox({ qaList, question, setQuestion, askQuestion, loader }) {
               {/* Question bubble */}
               <div className="flex justify-end">
                 <div
-                  className="bg-zinc-800 text-white px-4 py-2 max-w-lg 
-                  rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-none 
-                  shadow-md"
+                  className="bg-zinc-800 text-white px-4 py-2 max-w-full md:max-w-lg 
+                    rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-none 
+                    shadow-md"
                 >
                   {qa.question}
                 </div>
@@ -47,7 +47,6 @@ function ChatBox({ qaList, question, setQuestion, askQuestion, loader }) {
             </div>
           ))}
 
-          {/* Loader bubble niche hi dikhayega */}
           {loader && (
             <div className="flex justify-start">
               <div className="px-4 py-2">
@@ -100,23 +99,23 @@ function ChatBox({ qaList, question, setQuestion, askQuestion, loader }) {
           e.preventDefault();
           askQuestion();
         }}
-        className="bg-zinc-900 w-3/4 text-white m-auto 
+        className="bg-zinc-900 w-full md:w-3/4 text-white m-auto 
         rounded-4xl border border-zinc-700 flex p-1 pr-5  h-16 
         transition-all duration-200 ease-in-out hover:border-blue-500 mb-5"
       >
-          <input
-    value={question}
-    onChange={(event) => setQuestion(event.target.value)}
-    className="flex-1 h-full p-3 outline-none bg-transparent rounded-l-3xl"
-    type="text"
-    placeholder="Ask me anything"
-  />
-  <button
-    type="submit"
-    className="px-5 py-2 text-white font-medium cursor-pointer"
-  >
-    Ask
-  </button>
+        <input
+          value={question}
+          onChange={(event) => setQuestion(event.target.value)}
+          className="flex-1 h-full p-3 outline-none bg-transparent rounded-l-3xl"
+          type="text"
+          placeholder="Ask me anything"
+        />
+        <button
+          type="submit"
+          className="px-5 py-2 text-white font-medium cursor-pointer"
+        >
+          Ask
+        </button>
       </form>
     </div>
   );
